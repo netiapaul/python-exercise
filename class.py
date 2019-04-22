@@ -68,3 +68,29 @@ pupil.Display()
 pupil.Age(10)
 pupil.setMarks(69)
     
+# class inheritance
+
+class Car():
+    """initializing a car model"""
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        print(long_name.title())
+
+my_new_car = Car('audi', 'a4', 2016)
+my_new_car.get_descriptive_name()
+
+class Electric_car(Car):
+    """this class is a subclass of the superclass car"""
+    def __init__(self,make,model,year):
+        """Initialize attributes to describe a car."""
+        super().__init__(make,model,year)
+
+tesla=Electric_car('Tesla','model s',2018)
+tesla.get_descriptive_name()
